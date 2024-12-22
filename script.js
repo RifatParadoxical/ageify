@@ -4,7 +4,11 @@ const fetching = async() =>{
     const api = `https://api.agify.io/?name=${fName}`;
     const response = await fetch(api);
     const data = await response.json();
-    console.log(data); 
+    console.log(data);
+    if (data.count == 0) {
+        data.age = 69;
+    }
+    
     if (data.age == undefined) {
       data.age = 69;
     }
