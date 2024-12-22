@@ -5,8 +5,8 @@ const fetching = async() =>{
     const response = await fetch(api);
     const data = await response.json();
     console.log(data); 
-    if (data.count == 0) {
-        return data.age = 69;
+    if (data.age == undefined) {
+      data.age = 69;
     }
     console.log("running properly");
     document.getElementById('fact').innerText = `Let me guess. ${data.name}  is  ${data.age}  years old`
